@@ -12,7 +12,7 @@
 
 pkgname=mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=24.3.0_devel.194818.d3429a7e00d.d41d8cd
+pkgver=25.0.0_devel.199886.b6ef9017f48.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=(
@@ -26,12 +26,11 @@ makedepends=(
     'meson'
     'ninja'
     'glslang'
-    'directx-headers-git'
+    'directx-headers'
     'python-mako'
     'python-ply'
     'cbindgen'
     'wayland-protocols'
-    'cmake'
     'python-packaging'
     'python-pyaml'
 )
