@@ -1,4 +1,4 @@
-# Maintainer: Reza Jahanbakhshi <reza.jahanbakhshi at gmail dot com
+# Maintainer: Reza Jahanbakhshi <reza.jahanbakhshi at gmail dot com>
 # Contributor: Lone_Wolf <lone_wolf@klaas-de-kat.nl>
 # Contributor: Armin K. <krejzi at email dot com>
 # Contributor: Kristian Klausen <klausenbusk@hotmail.com>
@@ -9,9 +9,10 @@
 # Contributor: Thomas Dziedzic < gostrc at gmail >
 # Contributor: Antti "Tera" Oja <antti.bofh@gmail.com>
 # Contributor: Diego Jose <diegoxter1006@gmail.com>
+# Contributor: Francisco Zadikian <admin at gnlug dot com>
 
-pkgname=mesa-git
-pkgdesc="an open-source implementation of the OpenGL specification, git version"
+pkgname=mesa-nouveau-git
+pkgdesc="Open-source OpenGL and Vulkan drivers (minimal nouveau version)"
 pkgver=25.0.0_devel.200442.bfa6b9b6551.d41d8cd
 pkgrel=1
 arch=('x86_64')
@@ -26,7 +27,6 @@ makedepends=(
     'meson'
     'ninja'
     'glslang'
-    'directx-headers'
     'python-mako'
     'python-ply'
     'cbindgen'
@@ -61,14 +61,9 @@ depends=(
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 provides=(
     'vulkan-mesa-layers'
-    'opencl-driver'
     'opengl-driver'
     'vulkan-driver'
-    'vulkan-intel'
     'vulkan-nouveau'
-    'vulkan-radeon'
-    'vulkan-swrast'
-    'vulkan-virtio'
     'libva-mesa-driver'
     'mesa-vdpau'
     'mesa-libgl'
@@ -77,11 +72,7 @@ provides=(
 conflicts=(
     'vulkan-mesa-layers'
     'opencl-clover-mesa'
-    'vulkan-intel'
     'vulkan-nouveau'
-    'vulkan-radeon'
-    'vulkan-swrast'
-    'vulkan-virtio'
     'libva-mesa-driver'
     'mesa-vdpau'
     'mesa-libgl'
@@ -257,7 +248,7 @@ build () {
         -D b_ndebug=true
         -D b_lto=false
         -D egl=enabled
-        -D gallium-drivers=r300,r600,radeonsi,nouveau,virgl,svga,softpipe,llvmpipe,i915,iris,crocus,zink,d3d12
+        -D gallium-drivers=llvmpipe,zink,nouveau
         -D gallium-extra-hud=true
         -D gallium-nine=true
         -D gallium-opencl=disabled
@@ -270,7 +261,7 @@ build () {
         -D gles2=enabled
         -D glvnd=enabled
         -D glx=dri
-        -D intel-clc=enabled
+        -D intel-clc=disabled
         -D libunwind=enabled
         -D llvm=enabled
         -D lmsensors=enabled
@@ -280,8 +271,8 @@ build () {
         -D shared-glapi=enabled
         -D valgrind=disabled
         -D video-codecs=all
-        -D vulkan-drivers=amd,intel,intel_hasvk,swrast,virtio,nouveau
-        -D vulkan-layers=device-select,intel-nullhw,overlay
+        -D vulkan-drivers=nouveau
+        -D vulkan-layers=device-select,overlay
         -D tools=[]
         -D zstd=enabled
         -D buildtype=plain
