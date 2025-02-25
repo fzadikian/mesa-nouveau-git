@@ -61,6 +61,7 @@ depends=(
 optdepends=('opengl-man-pages: for the OpenGL API man pages')
 provides=(
     'vulkan-mesa-layers'
+    'opencl-driver'
     'opengl-driver'
     'vulkan-driver'
     'vulkan-nouveau'

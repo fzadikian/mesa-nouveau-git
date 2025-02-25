@@ -57,6 +57,7 @@ pkgbase = mesa-nouveau-git
 	depends = spirv-tools
 	optdepends = opengl-man-pages: for the OpenGL API man pages
 	provides = vulkan-mesa-layers
+	provides = opencl-driver
 	provides = opengl-driver
 	provides = vulkan-driver
 	provides = vulkan-nouveau
