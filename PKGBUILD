@@ -13,7 +13,7 @@
 
 pkgname=mesa-nouveau-git
 pkgdesc="Open-source OpenGL and Vulkan drivers (minimal nouveau version)"
-pkgver=25.0.0_devel.200442.bfa6b9b6551.d41d8cd
+pkgver=25.1.0_devel.202289.6b7b8738b3f.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=(
@@ -261,7 +261,7 @@ build () {
         -D gles2=enabled
         -D glvnd=enabled
         -D glx=dri
-        -D intel-clc=disabled
+        -D intel-clc=system
         -D libunwind=enabled
         -D llvm=enabled
         -D lmsensors=enabled
