@@ -257,7 +257,7 @@ build () {
         -D b_ndebug=true
         -D b_lto=false
         -D egl=enabled
-        -D gallium-drivers=r300,r600,radeonsi,nouveau,virgl,svga,softpipe,llvmpipe,i915,iris,crocus,zink,d3d12
+        -D gallium-drivers=r300,r600,radeonsi,nouveau,virgl,svga,softpipe,llvmpipe,i915,iris,crocus,zink
         -D gallium-extra-hud=true
         -D gallium-nine=true
         -D gallium-rusticl=${_rusticl}
