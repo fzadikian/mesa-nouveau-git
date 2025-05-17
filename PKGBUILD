@@ -12,7 +12,7 @@
 
 pkgname=mesa-git
 pkgdesc="an open-source implementation of the OpenGL specification, git version"
-pkgver=25.2.0_devel.204321.de6efc01c12.d41d8cd
+pkgver=25.2.0_devel.205654.033ce1bae15.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=(
@@ -285,7 +285,7 @@ build () {
         -D zstd=enabled
         -D buildtype=plain
         --wrap-mode=nofallback
-        --force-fallback-for=syn,paste
+        --force-fallback-for=syn,paste,rustc-hash
         -D prefix=/usr
         -D sysconfdir=/etc
         -D legacy-x11=dri2
