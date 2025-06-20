@@ -1,4 +1,8 @@
-mesa-git-*
+mesa-nouveau-git-*
+proc-macro2-*
+quote-*
+syn-*
+unicode-ident-*
 mesa
 pkg
 src
