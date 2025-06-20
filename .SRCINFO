@@ -1,6 +1,6 @@
 pkgbase = mesa-nouveau-git
 	pkgdesc = Open-source OpenGL and Vulkan drivers (minimal nouveau version)
-	pkgver = 25.1.0_devel.202289.6b7b8738b3f.d41d8cd
+	pkgver = 25.2.0_devel.206777.7bfb51a7e6f.d41d8cd
 	pkgrel = 1
 	url = https://www.mesa3d.org
 	arch = x86_64
@@ -21,8 +21,8 @@ pkgbase = mesa-nouveau-git
 	makedepends = wayland-protocols
 	makedepends = python-packaging
 	makedepends = python-pyaml
-	makedepends = llvm=19.1.7
-	makedepends = clang=19.1.7
+	makedepends = llvm=20.1.6
+	makedepends = clang=20.1.6
 	makedepends = libclc
 	makedepends = spirv-llvm-translator
 	makedepends = spirv-tools
@@ -50,7 +50,7 @@ pkgbase = mesa-nouveau-git
 	depends = zlib
 	depends = python
 	depends = xcb-util-keysyms
-	depends = llvm-libs=19.1.7
+	depends = llvm-libs=20.1.6
 	depends = clang
 	depends = libclc
 	depends = spirv-llvm-translator

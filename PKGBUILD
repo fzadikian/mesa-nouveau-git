@@ -13,7 +13,7 @@
 
 pkgname=mesa-nouveau-git
 pkgdesc="Open-source OpenGL and Vulkan drivers (minimal nouveau version)"
-pkgver=25.1.0_devel.202289.6b7b8738b3f.d41d8cd
+pkgver=25.2.0_devel.206777.7bfb51a7e6f.d41d8cd
 pkgrel=1
 arch=('x86_64')
 makedepends=(
@@ -186,8 +186,8 @@ case $MESA_WHICH_LLVM in
     4)
         # extra/llvm
         makedepends+=(
-            'llvm=19.1.7'
-            'clang=19.1.7'
+            'llvm=20.1.6'
+            'clang=20.1.6'
             'libclc'
             'spirv-llvm-translator'
             'spirv-tools'
@@ -195,7 +195,7 @@ case $MESA_WHICH_LLVM in
             'rust-bindgen'
         )
         depends+=(
-            'llvm-libs=19.1.7'
+            'llvm-libs=20.1.6'
             'clang'
             'libclc'
             'spirv-llvm-translator'
@@ -251,12 +251,9 @@ build () {
         -D egl=enabled
         -D gallium-drivers=llvmpipe,zink,nouveau
         -D gallium-extra-hud=true
-        -D gallium-nine=true
-        -D gallium-opencl=disabled
         -D gallium-rusticl=${_rusticl}
         -D gallium-va=enabled
         -D gallium-vdpau=enabled
-        -D gallium-xa=enabled
         -D gbm=enabled
         -D gles1=disabled
         -D gles2=enabled
@@ -267,9 +264,7 @@ build () {
         -D llvm=enabled
         -D lmsensors=enabled
         -D microsoft-clc=disabled
-        -D osmesa=true
         -D platforms=x11,wayland
-        -D shared-glapi=enabled
         -D valgrind=disabled
         -D video-codecs=all
         -D vulkan-drivers=nouveau
@@ -278,7 +273,7 @@ build () {
         -D zstd=enabled
         -D buildtype=plain
         --wrap-mode=nofallback
-        --force-fallback-for=syn,paste
+        --force-fallback-for=syn,paste,rustc-hash
         -D prefix=/usr
         -D sysconfdir=/etc
         -D legacy-x11=dri2
